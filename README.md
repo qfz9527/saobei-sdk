@@ -9,7 +9,7 @@
 最好的安装方法是通过 [Composer](http://getcomposer.org/) 包管理器 :
 
 ```shell
-composer require dmk629/saobei-sdk
+composer require qfz9527/saobei-sdk
 ```
 
 ## 依赖
