@@ -67,6 +67,17 @@ class Dispatcher
 
     /**
      *
+     * @param string $mchPath
+     * @param string $payPath
+     * @throws SaobeiException
+     * */
+    public function initPath($mchPath, $payPath)
+    {
+        Path::getInstance($mchPath, $payPath);
+    }
+
+    /**
+     *
      * @throws SaobeiException
      * @throws \Exception
      * */
