@@ -51,6 +51,7 @@ class Dispatcher
      * */
     public function initTerminal($merchantNo, $terminalId, $token)
     {
+        Terminal::clearInstance();
         Terminal::getInstance($merchantNo, $terminalId, $token);
     }
 
@@ -62,6 +63,7 @@ class Dispatcher
      * */
     public function initMerchant($instNo, $key)
     {
+        Merchant::clearInstance();
         Merchant::getInstance($instNo, $key);
     }
 
@@ -73,6 +75,7 @@ class Dispatcher
      * */
     public function initPath($mchPath, $payPath)
     {
+        Path::clearInstance();
         Path::getInstance($mchPath, $payPath);
     }
 

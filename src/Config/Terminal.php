@@ -57,7 +57,7 @@ class Terminal
         return self::$instance;
     }
 
-    public function clearInstance()
+    static public function clearInstance()
     {
         self::$instance = null;
     }
