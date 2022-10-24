@@ -57,6 +57,11 @@ class Terminal
         return self::$instance;
     }
 
+    public function clearInstance()
+    {
+        self::$instance = null;
+    }
+
     public function getMerchantNo()
     {
         return $this->merchantNo;

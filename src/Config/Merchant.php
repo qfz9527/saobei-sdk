@@ -49,6 +49,11 @@ class Merchant
         return self::$instance;
     }
 
+    public function clearInstance()
+    {
+        self::$instance = null;
+    }
+
     public function getInstNo()
     {
         return $this->instNo;

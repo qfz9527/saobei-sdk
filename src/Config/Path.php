@@ -53,6 +53,11 @@ class Path
         return self::$instance;
     }
 
+    public function clearInstance()
+    {
+        self::$instance = null;
+    }
+
     public function getMchPath()
     {
         return $this->mchPath;
