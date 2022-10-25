@@ -32,6 +32,7 @@ class MerchantRoute
     public static $queryD0 = "/merchant/open/timelystatus_query";//即时到账(D0)业务状态查询
 
     public static $queryChannelMerchant = "/merchant/200/queryChnlMchntGet";//商户子商户信息查询接口
+    public static $queryMerchantAuthstatus = "/merchant/200/queryMerchantAuthstatus";//商户子商户信息查询接口
 
     public static $queryMerchantCash = "/merchant/withdraw/querycash";//商户查询余额
     public static $queryMerchantFee = "/merchant/withdraw/queryfee";//商户查询手续费
@@ -51,4 +52,6 @@ class MerchantRoute
     public static $cancelAllocate = "/order/allocate/querycontract";//撤销分账
 
     public static $queryAllocateRecord = "/order/allocate/queryallocate";//查询入账户分账流水
+
+    public static $goldpanOpenConfig = '/goldpan/open/config';//点金和商家小票配置
 }

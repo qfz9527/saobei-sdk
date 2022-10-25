@@ -29,12 +29,14 @@ use Saobei\sdk\Model\Merchant\BillRequest as Bill;
 use Saobei\sdk\Model\Merchant\WeChatConfigRequest as WeChatConfig;
 use Saobei\sdk\Model\Merchant\RateRequest as Rate;
 use Saobei\sdk\Model\Merchant\ChannelMerchantRequest as ChannelMerchant;
+use Saobei\sdk\Model\Merchant\MerchantAuthstatusRequest as MerchantAuthstatus;
 use Saobei\sdk\Model\Merchant\BankCardRequest as BankCard;
 use Saobei\sdk\Model\Merchant\SettleRequest as Settle;
 use Saobei\sdk\Model\Merchant\TimelyRequest as Timely;
 use Saobei\sdk\Model\Merchant\MerchantNotify as MerchantNotify;
 use Saobei\sdk\Model\Merchant\CashRequest as MerchantCash;
 use Saobei\sdk\Model\Merchant\TransferRequest as MerchantTransfer;
+use Saobei\sdk\Model\Merchant\MerchantGoldpanRequest as MerchantGoldpan;
 use Saobei\sdk\Model\Merchant\Allocate\ContractRequest as MerchantContract;
 use Saobei\sdk\Model\Merchant\Allocate\OrderRequest as AllocateOrder;
 use Saobei\sdk\Model\Merchant\Allocate\AccountRequest as MerchantAccount;
@@ -287,6 +289,9 @@ class Dispatcher
                 case 'querychannelmerchant':
                     $response = $this->sendPostRequest(array(new ChannelMerchant(), 'query'), $arguments[0], MerchantRoute::$queryChannelMerchant, 'mch');
                     break;
+                case 'querymerchantauthstatus':
+                    $response = $this->sendPostRequest(array(new MerchantAuthstatus(), 'query'), $arguments[0], MerchantRoute::$queryMerchantAuthstatus, 'mch');
+                    break;
                 case 'updatebankcardinfo':
                     $response = $this->sendPostRequest(array(new BankCard(), 'update'), $arguments[0], MerchantRoute::$updateBankCardInfo, 'mch');
                     break;
@@ -354,6 +359,9 @@ class Dispatcher
                     break;
                 case 'querytransfer':
                     $response = $this->sendPostRequest(array(new MerchantTransfer(), 'query'), $arguments[0], MerchantRoute::$queryTransfer, 'mch');
+                    break;
+                case 'goldpanopenconfig':
+                    $response = $this->sendPostRequest(array(new MerchantGoldpan(), 'open'), $arguments[0], MerchantRoute::$goldpanOpenConfig, 'mch');
                     break;
                 default:
                     throw new SaobeiException('方法不存在');
