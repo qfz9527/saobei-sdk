@@ -6,7 +6,7 @@ use Saobei\sdk\Exception\SaobeiException;
 class RateRequest extends MerchantRequest
 {
     protected $requiredFields = array(
-        'inst_no','trace_no','key_sign','merchant_no'
+        'inst_no','trace_no','key_sign','merchant_no','version'
     );
     protected $optionalFields = array(
         'wx_rate_code','ali_rate_code','qq_rate_code','jd_rate_code'
