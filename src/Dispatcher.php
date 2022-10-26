@@ -365,7 +365,6 @@ class Dispatcher
                     break;
                 default:
                     throw new SaobeiException('方法不存在');
-                    break;
             }
         } catch (SaobeiException $e) {
             throw new SaobeiException($e->getMessage(), $e->getCode());

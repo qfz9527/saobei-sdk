@@ -13,8 +13,8 @@ class MerchantRoute
     public static $updateStore = "/store/110/update";//更新商户资料
     public static $queryStore = "/store/110/query";//查询商户
 
-    public static $addTerminal = "/terminal/110/add";//创建终端
-    public static $queryTerminal = "/terminal/110/query";//查询终端
+    public static $addTerminal = "/terminal/100/add";//创建终端
+    public static $queryTerminal = "/terminal/100/query";//查询终端
 
     public static $setWechatConfig = "/merchant/200/wechatConfigSet";//微信参数配置
     public static $getWechatConfig = "/merchant/200/wechatConfigGet";//微信参数配置查询

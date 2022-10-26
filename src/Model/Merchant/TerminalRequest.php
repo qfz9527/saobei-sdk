@@ -40,15 +40,7 @@ class TerminalRequest extends MerchantRequest
      * */
     public function add($fields)
     {
-        $param = $this->main(array(
-            'inst_no' => $fields['inst_no'],
-            'trace_no' => $fields['trace_no'],
-            'merchant_no' => $fields['merchant_no']
-        ));
-        $param['api_ver'] = '201';
-        if(isset($fields['store_code']))$param['store_code'] = $fields['store_code'];
-        if(isset($fields['terminal_name']))$param['terminal_name'] = $fields['terminal_name'];
-        return $param;
+        return $this->main($fields);
     }
 
     /**
@@ -67,14 +59,7 @@ class TerminalRequest extends MerchantRequest
      * */
     public function query($fields)
     {
-        $param = $this->main(array(
-            'inst_no' => $fields['inst_no'],
-            'trace_no' => $fields['trace_no'],
-            'terminal_id' => $fields['terminal_id']
-        ));
-        $param['api_ver'] = '201';
-        if(isset($fields['merchant_no']))$param['merchant_no'] = $fields['merchant_no'];
-        return $param;
+        return $this->main($fields);
     }
 
 }
