@@ -269,10 +269,10 @@ class Dispatcher
                     $response = $this->sendGetRequest(array(new MerchantStore(), 'query'), $arguments[0], MerchantRoute::$queryStore, 'mch');
                     break;
                 case 'merchantaddterminal':
-                    $response = $this->sendGetRequest(array(new MerchantTerminal(), 'downloadPath'), $arguments[0], MerchantRoute::$addTerminal, 'mch');
+                    $response = $this->sendGetRequest(array(new MerchantTerminal(), 'add'), $arguments[0], MerchantRoute::$addTerminal, 'mch');
                     break;
                 case 'merchantqueryterminal':
-                    $response = $this->sendGetRequest(array(new MerchantTerminal(), 'downloadPath'), $arguments[0], MerchantRoute::$queryTerminal, 'mch');
+                    $response = $this->sendGetRequest(array(new MerchantTerminal(), 'query'), $arguments[0], MerchantRoute::$queryTerminal, 'mch');
                     break;
                 case 'wechatconfigset':
                     $response = $this->sendPostRequest(array(new WechatConfig(), 'set'), $arguments[0], MerchantRoute::$setWechatConfig, 'mch');
@@ -368,7 +368,7 @@ class Dispatcher
                     break;
             }
         } catch (SaobeiException $e) {
-            echo $e->getMessage();
+            throw new SaobeiException($e->getMessage(), $e->getCode());
         }
         return empty($response) ? null : $response;
     }

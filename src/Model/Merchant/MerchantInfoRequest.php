@@ -352,6 +352,9 @@ class MerchantInfoRequest extends MerchantRequest
      * */
     public function update($fields)
     {
+        $this->requiredFields = array(
+            'inst_no','trace_no','key_sign','merchant_no'
+        );
         $default = array(
             'api_ver' => '200'
         );

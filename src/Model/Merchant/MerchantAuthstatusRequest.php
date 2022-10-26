@@ -6,7 +6,7 @@ use Saobei\sdk\Exception\SaobeiException;
 class MerchantAuthstatusRequest extends MerchantRequest
 {
     protected $requiredFields = array(
-        'inst_no','trace_no','key_sign','merchant_no'
+        'inst_no','trace_no','key_sign','merchant_no','api_ver','type'
     );
 
     /** @var string 商户号 */
