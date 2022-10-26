@@ -60,6 +60,9 @@ class BankCardRequest extends MerchantRequest
      * */
     public function query($fields)
     {
+        $this->requiredFields = array(
+            'inst_no','trace_no','key_sign','merchant_no','version'
+        );
         return $this->main($fields);
     }
 
