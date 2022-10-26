@@ -58,8 +58,8 @@ class StoreRequest extends MerchantRequest
             'store_email' => $fields['store_email']
         ));
         $param['api_ver'] = '200';
-        if(isset($fields))$param['store_addre'] = $fields['store_addre'];
-        if(isset($fields))$param['store_person'] = $fields['store_person'];
+        if(isset($fields['store_addre']))$param['store_addre'] = $fields['store_addre'];
+        if(isset($fields['store_person']))$param['store_person'] = $fields['store_person'];
         return $param;
     }
 
@@ -91,11 +91,11 @@ class StoreRequest extends MerchantRequest
             '$store_code' => $fields['$store_code']
         ));
         $param['api_ver'] = '200';
-        if(isset($fields))$param['store_name'] = $fields['store_name'];
-        if(isset($fields))$param['store_phone'] = $fields['store_phone'];
-        if(isset($fields))$param['store_email '] = $fields['store_email '];
-        if(isset($fields))$param['store_addre'] = $fields['store_addre'];
-        if(isset($fields))$param['store_person'] = $fields['store_person'];
+        if(isset($fields['store_name']))$param['store_name'] = $fields['store_name'];
+        if(isset($fields['store_phone']))$param['store_phone'] = $fields['store_phone'];
+        if(isset($fields['store_email']))$param['store_email '] = $fields['store_email '];
+        if(isset($fields['store_addre']))$param['store_addre'] = $fields['store_addre'];
+        if(isset($fields['store_person']))$param['store_person'] = $fields['store_person'];
         return $param;
     }
 
@@ -121,7 +121,7 @@ class StoreRequest extends MerchantRequest
             'store_code' => $fields['store_code']
         ));
         $param['api_ver'] = '200';
-        if(isset($fields))$param['merchant_no'] = $fields['merchant_no'];
+        if(isset($fields['merchant_no']))$param['merchant_no'] = $fields['merchant_no'];
         return $param;
     }
 

@@ -45,9 +45,9 @@ class TerminalRequest extends MerchantRequest
             'trace_no' => $fields['trace_no'],
             'merchant_no' => $fields['merchant_no']
         ));
-        $param['api_ver'] = '200';
-        if(isset($fields))$param['store_code'] = $fields['store_code'];
-        if(isset($fields))$param['terminal_name'] = $fields['terminal_name'];
+        $param['api_ver'] = '201';
+        if(isset($fields['store_code']))$param['store_code'] = $fields['store_code'];
+        if(isset($fields['terminal_name']))$param['terminal_name'] = $fields['terminal_name'];
         return $param;
     }
 
@@ -72,8 +72,8 @@ class TerminalRequest extends MerchantRequest
             'trace_no' => $fields['trace_no'],
             'terminal_id' => $fields['terminal_id']
         ));
-        $param['api_ver'] = '200';
-        if(isset($fields))$param['merchant_no'] = $fields['merchant_no'];
+        $param['api_ver'] = '201';
+        if(isset($fields['merchant_no']))$param['merchant_no'] = $fields['merchant_no'];
         return $param;
     }
 
