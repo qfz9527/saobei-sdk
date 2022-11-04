@@ -4,20 +4,20 @@ namespace Saobei\sdk\Config;
 class TradeRoute
 {
     //普通支付
-    public static $barcodePay = "/pay/110/barcodepay";//条码支付
-    public static $prePay = "/pay/110/prepay";//预支付
-    public static $jsPay = "/pay/110/jspay";//公众号支付
+    public static $barcodePay = "/pay/open/barcodepay";//条码支付
+    public static $prePay = "/pay/open/prepay";//预支付
+    public static $jsPay = "/pay/open/jspay";//公众号支付
     public static $appPay = "/pay/110/apppay";//app支付
-    public static $miniPay = "/pay/110/minipay";//小程序支付
-    public static $facePay = "/pay/110/facepay";//自助收银支付
-    public static $faceInfo = "/pay/110/faceinfo";//自助收银SDK调用凭证获取
+    public static $miniPay = "/pay/open/minipay";//小程序支付
+    public static $facePay = "/pay/open/facepay";//自助收银支付
+    public static $faceInfo = "/pay/open/faceinfo";//自助收银SDK调用凭证获取
     public static $authCodeToOpenId = "/pay/110/authcodetoopenid";// 授权码查询 OPENID
-    public static $query = "/pay/110/query"; //支付查询
-    public static $cancel = "/pay/110/cancel"; //撤销交易
-    public static $close = "/pay/110/close";//关单
-    public static $refund = "/pay/110/refund";//退款
-    public static $refundQuery = "/pay/110/queryrefund";//退款查询
-    public static $qrPay = "/pay/110/qrpay";//聚合码支付
+    public static $query = "/pay/open/query"; //支付查询
+    public static $cancel = "/pay/open/cancel"; //撤销交易
+    public static $close = "/pay/open/close";//关单
+    public static $refund = "/pay/open/refund";//退款
+    public static $refundQuery = "/pay/open/queryrefund";//退款查询
+    public static $qrPay = "/pay/open/qrpay";//聚合码支付
     public static $wapSdk = "/open/wap/110/pay";//WAP SDK
     public static $authOpenid = "/wx/jsapi/authopenid";//微信公众号JSAPI支付授权
     public static $authAccessToken = "/wx/jsapi/authAccessToken";//微信获取access_token(扫码点餐的登录票据)

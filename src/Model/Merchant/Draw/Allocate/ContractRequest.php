@@ -1,5 +1,5 @@
 <?php
-namespace Saobei\sdk\Model\Merchant\Allocate;
+namespace Saobei\sdk\Model\Merchant\Draw\Allocate;
 
 use Saobei\sdk\Exception\SaobeiException;
 use Saobei\sdk\Model\Merchant\Draw\DrawRequest;

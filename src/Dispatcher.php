@@ -34,12 +34,12 @@ use Saobei\sdk\Model\Merchant\BankCardRequest as BankCard;
 use Saobei\sdk\Model\Merchant\SettleRequest as Settle;
 use Saobei\sdk\Model\Merchant\TimelyRequest as Timely;
 use Saobei\sdk\Model\Merchant\MerchantNotify as MerchantNotify;
-use Saobei\sdk\Model\Merchant\CashRequest as MerchantCash;
-use Saobei\sdk\Model\Merchant\TransferRequest as MerchantTransfer;
+use Saobei\sdk\Model\Merchant\Draw\CashRequest as MerchantCash;
+use Saobei\sdk\Model\Merchant\Draw\TransferRequest as MerchantTransfer;
 use Saobei\sdk\Model\Merchant\MerchantGoldpanRequest as MerchantGoldpan;
-use Saobei\sdk\Model\Merchant\Allocate\ContractRequest as MerchantContract;
-use Saobei\sdk\Model\Merchant\Allocate\OrderRequest as AllocateOrder;
-use Saobei\sdk\Model\Merchant\Allocate\AccountRequest as MerchantAccount;
+use Saobei\sdk\Model\Merchant\Draw\Allocate\ContractRequest as MerchantContract;
+use Saobei\sdk\Model\Merchant\Draw\Allocate\OrderRequest as AllocateOrder;
+use Saobei\sdk\Model\Merchant\Draw\Allocate\AccountRequest as MerchantAccount;
 use Saobei\sdk\Util\HttpClient;
 
 class Dispatcher
@@ -331,13 +331,13 @@ class Dispatcher
                     $response = $this->sendPostRequest(array(new MerchantCash(), 'settlementRecords'), $arguments[0], MerchantRoute::$querySettlementRecords, 'mch');
                     break;
                 case 'generatecontract':
-                    $response = $this->sendPostRequest(array(new MerchantContract(), 'create'), $arguments[0], MerchantRoute::$generateContract, 'mch');
+                    $response = $this->sendPostRequest(array(new MerchantContract(), 'create'), $arguments[0], MerchantRoute::$generateContract, 'pay');
                     break;
                 case 'signcontract':
-                    $response = $this->sendPostRequest(array(new MerchantContract(), 'sign'), $arguments[0], MerchantRoute::$signContract, 'mch');
+                    $response = $this->sendPostRequest(array(new MerchantContract(), 'sign'), $arguments[0], MerchantRoute::$signContract, 'pay');
                     break;
                 case 'querycontract':
-                    $response = $this->sendPostRequest(array(new MerchantContract(), 'query'), $arguments[0], MerchantRoute::$queryContract, 'mch');
+                    $response = $this->sendPostRequest(array(new MerchantContract(), 'query'), $arguments[0], MerchantRoute::$queryContract, 'pay');
                     break;
                 case 'queryallocate':
                     $response = $this->sendPostRequest(array(new AllocateOrder(), 'query'), $arguments[0], MerchantRoute::$queryAllocate, 'mch');

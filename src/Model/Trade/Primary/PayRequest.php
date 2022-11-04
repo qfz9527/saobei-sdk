@@ -7,8 +7,11 @@ use Saobei\sdk\Util\UrlUtil;
 
 class PayRequest extends PrimaryRequest
 {
+    protected $requiredFields = array(
+        'pay_ver','pay_type','service_id','merchant_no','terminal_id','terminal_ip','terminal_trace','terminal_time','total_fee','sub_appid','open_id','key_sign'
+    );
     protected $optionalFields = array(
-        'order_body','attach','goods_detail','goods_tag','auth_no','notify_url','open_id','out_trade_no','front_url','auto_pay','repeated_trace'
+        'device_no','goods_detail','goods_tag','order_body','notify_url','attach','coupon_no','coupon_credential','custom_store_id','official_store_id','food_order_type'
     );
 
     /** @var string 订单描述 */
@@ -120,6 +123,9 @@ class PayRequest extends PrimaryRequest
      * */
     public function prepay($fields)
     {
+        $this->requiredFields = array(
+            'pay_ver', 'pay_type', 'service_id', 'merchant_no', 'terminal_id', 'terminal_ip', 'terminal_trace', 'terminal_time', 'total_fee', 'key_sign'
+        );
         $default = array(
             'service_id' => '011'
         );
@@ -242,7 +248,11 @@ class PayRequest extends PrimaryRequest
      * */
     public function wapPay($fields)
     {
-        $this->requiredFields = array_diff($this->requiredFields, array('pay_ver','pay_type','service_id'));
+        unset($fields['pay_ver'], $fields['pay_type'], $fields['service_id']);
+        $this->pay_ver = $this->pay_type = $this->service_id = null;
+        $this->requiredFields = array(
+            'merchant_no', 'terminal_id', 'terminal_trace', 'terminal_time', 'total_fee', 'key_sign'
+        );
         $this->init($fields);
         $this->checkParam(array());
         $param = $this->getter();
@@ -276,6 +286,9 @@ class PayRequest extends PrimaryRequest
      * */
     public function qrPay($fields)
     {
+        $this->requiredFields = array(
+            'pay_ver', 'pay_type', 'service_id', 'merchant_no', 'terminal_id', 'terminal_trace', 'terminal_time', 'total_fee', 'key_sign'
+        );
         $default = array(
             'pay_type' => '000',
             'service_id' => '016'
