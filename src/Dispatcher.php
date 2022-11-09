@@ -340,13 +340,13 @@ class Dispatcher
                     $response = $this->sendPostRequest(array(new MerchantContract(), 'query'), $arguments[0], MerchantRoute::$queryContract, 'pay');
                     break;
                 case 'queryallocate':
-                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'query'), $arguments[0], MerchantRoute::$queryAllocate, 'mch');
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'query'), $arguments[0], MerchantRoute::$queryAllocate, 'pay');
                     break;
                 case 'doallocate':
-                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'doAllocate'), $arguments[0], MerchantRoute::$doAllocate, 'mch');
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'doAllocate'), $arguments[0], MerchantRoute::$doAllocate, 'pay');
                     break;
                 case 'cancelallocate':
-                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'cancel'), $arguments[0], MerchantRoute::$cancelAllocate, 'mch');
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'cancel'), $arguments[0], MerchantRoute::$cancelAllocate, 'pay');
                     break;
                 case 'queryallocaterecord':
                     $response = $this->sendPostRequest(array(new MerchantAccount(), 'query'), $arguments[0], MerchantRoute::$queryAllocateRecord, 'mch');

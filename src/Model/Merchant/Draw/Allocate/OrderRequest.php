@@ -2,9 +2,9 @@
 namespace Saobei\sdk\Model\Merchant\Draw\Allocate;
 
 use Saobei\sdk\Exception\SaobeiException;
-use Saobei\sdk\Model\Merchant\Draw\DrawRequest;
+use Saobei\sdk\Model\Trade\TradeRequest;
 
-class OrderRequest extends DrawRequest
+class OrderRequest extends TradeRequest
 {
     protected $requiredFields = array(
         'pay_ver','merchant_no','key_sign'
