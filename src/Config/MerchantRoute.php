@@ -50,6 +50,10 @@ class MerchantRoute
     public static $doAllocate = "/order/allocate/doallocate";//发起订单分账
     public static $queryAllocate = "/order/allocate/query";//查询分账
     public static $cancelAllocate = "/order/allocate/querycontract";//撤销分账
+    public static $allocateAccept = "/order/allocate/allocateaccept";//分账受理
+    public static $allocateCancel = "/order/allocate/allocatecancel";//分账受理冲正
+    public static $allocateConfirm = "/order/allocate/allocateconfirm";//分账确认
+    public static $queryConfirm = "/order/allocate/queryconfirm";//分账确认查询(单条)
 
     public static $queryAllocateRecord = "/order/allocate/queryallocate";//查询入账户分账流水
 

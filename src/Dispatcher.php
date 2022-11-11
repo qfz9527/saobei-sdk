@@ -348,6 +348,18 @@ class Dispatcher
                 case 'cancelallocate':
                     $response = $this->sendPostRequest(array(new AllocateOrder(), 'cancel'), $arguments[0], MerchantRoute::$cancelAllocate, 'pay');
                     break;
+                case 'allocateaccept':
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'allocateAccept'), $arguments[0], MerchantRoute::$allocateAccept, 'pay');
+                    break;
+                case 'allocatecancel':
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'allocateCancel'), $arguments[0], MerchantRoute::$allocateCancel, 'pay');
+                    break;
+                case 'allocateconfirm':
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'allocateConfirm'), $arguments[0], MerchantRoute::$allocateConfirm, 'pay');
+                    break;
+                case 'queryconfirm':
+                    $response = $this->sendPostRequest(array(new AllocateOrder(), 'queryConfirm'), $arguments[0], MerchantRoute::$queryConfirm, 'pay');
+                    break;
                 case 'queryallocaterecord':
                     $response = $this->sendPostRequest(array(new MerchantAccount(), 'query'), $arguments[0], MerchantRoute::$queryAllocateRecord, 'mch');
                     break;

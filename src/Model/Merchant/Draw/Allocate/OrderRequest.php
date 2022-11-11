@@ -10,7 +10,8 @@ class OrderRequest extends TradeRequest
         'pay_ver','merchant_no','key_sign'
     );
     protected $optionalFields = array(
-        'rule_no','rule_list_json','contract_no','terminal_id','terminal_trace','terminal_time','order_body','attach','out_trade_no','pay_trace','pay_time'
+        'rule_no','rule_list_json','contract_no','terminal_id','terminal_trace','terminal_time','order_body','attach','out_trade_no','pay_trace','pay_time','account_in_list',
+        'is_freeze_all'
     );
 
     /** @var string 版本号 */
@@ -105,6 +106,50 @@ class OrderRequest extends TradeRequest
      * @throws SaobeiException
      * */
     public function cancel($fields)
+    {
+        return $this->main($fields);
+    }
+
+    /**
+     * 分账受理
+     * @param $fields
+     * @return array
+     * @throws SaobeiException
+     */
+    public function allocateAccept($fields)
+    {
+        return $this->main($fields);
+    }
+
+    /**
+     * 分账受理冲正
+     * @param $fields
+     * @return array
+     * @throws SaobeiException
+     */
+    public function allocateCancel($fields)
+    {
+        return $this->main($fields);
+    }
+
+    /**
+     * 分账确认
+     * @param $fields
+     * @return array
+     * @throws SaobeiException
+     */
+    public function allocateConfirm($fields)
+    {
+        return $this->main($fields);
+    }
+
+    /**
+     * 分账确认查询(单条)
+     * @param $fields
+     * @return array
+     * @throws SaobeiException
+     */
+    public function queryConfirm($fields)
     {
         return $this->main($fields);
     }
