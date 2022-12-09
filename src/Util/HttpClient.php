@@ -43,7 +43,7 @@ class HttpClient
         if ($curl_result == false) {
             $error = curl_error($curl_handler);
             curl_close($curl_handler);
-            return array('code' => $curl_http_status, 'message' => $error,'data' => $curl_http_info);
+            return array('return_code' => $curl_http_status, 'return_msg' => $error,'data' => $curl_http_info);
         }
         curl_close($curl_handler);
         $result = json_decode($curl_result, true);
@@ -71,7 +71,7 @@ class HttpClient
         if ($curl_result === false) {
             $error = curl_error($curl_handler);
             curl_close($curl_handler);
-            return array('code' => $curl_http_status, 'message' => $error,'data' => $curl_http_info);
+            return array('return_code' => $curl_http_status, 'return_msg' => $error,'data' => $curl_http_info);
         }
         $result = json_decode($curl_result,true);
         if (is_null($result) || empty($result)) $result = $curl_result;
