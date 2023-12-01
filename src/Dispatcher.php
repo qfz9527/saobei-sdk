@@ -122,6 +122,9 @@ class Dispatcher
                 case 'refund':
                     $response = $this->sendPostRequest(array(new OrderRequest(), 'refund'), $arguments[0], TradeRoute::$refund);
                     break;
+                case 'queryrefund':
+                    $response = $this->sendPostRequest(array(new OrderRequest(), 'queryRefund'), $arguments[0], TradeRoute::$refundQuery);
+                    break;
                 case 'cancel':
                     $response = $this->sendPostRequest(array(new OrderRequest(), 'cancel'), $arguments[0], TradeRoute::$cancel);
                     break;
